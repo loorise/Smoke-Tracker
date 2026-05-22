@@ -26,6 +26,10 @@ function isInsideTelegram(webApp) {
   return false
 }
 
+export function getInitData() {
+  return getWebApp()?.initData ?? ''
+}
+
 function applyChromeColors(webApp) {
   webApp.setHeaderColor('secondary_bg_color')
   webApp.setBackgroundColor('bg_color')
@@ -78,22 +82,27 @@ function setupTelegram(webApp) {
 function setupBrowserFallback() {
   document.documentElement.dataset.env = 'browser'
 
-  applyAppTheme(getSystemColorScheme())
+  const scheme = getSystemColorScheme()
+  applyAppTheme(scheme)
   applyBrowserSafeArea()
 
-  const unsubscribe = subscribeSystemTheme(applyAppTheme)
+  const media = window.matchMedia('(prefers-color-scheme: dark)')
+  const onSchemeChange = (event) => {
+    applyAppTheme(event.matches ? 'dark' : 'light')
+  }
+
+  media.addEventListener('change', onSchemeChange)
 
   runtime = {
     mode: 'browser',
     webApp: null,
     isLocalhost: isDevLocalhost(),
-    dispose: unsubscribe,
+    dispose: () => media.removeEventListener('change', onSchemeChange),
   }
 }
 
 /**
  * Инициализация Telegram Mini App при старте приложения.
- * В обычном браузере (localhost) — fallback без auth и без Telegram API.
  */
 export function initTelegramWebApp() {
   const webApp = getWebApp()

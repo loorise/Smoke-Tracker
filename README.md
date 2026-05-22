@@ -55,6 +55,19 @@ npm run dev
 # supabase/migrations/20240522000001_smoking_events.sql
 # supabase/migrations/20240522000002_smoking_events_delete.sql
 # supabase/migrations/20240522000003_user_preferences.sql
+# supabase/migrations/20240522000004_harden_rls.sql
+```
+
+### Security (RLS + Telegram auth)
+
+См. [supabase/SECURITY.md](supabase/SECURITY.md).
+
+1. Примените миграцию `20240522000004_harden_rls.sql`
+2. Задеплойте Edge Function `verify-telegram` и секреты (`TELEGRAM_BOT_TOKEN`, `JWT_SECRET`, `PROJECT_URL`)
+3. Для localhost dev: `ALLOW_DEV_TELEGRAM_AUTH=true`
+
+```bash
+supabase functions deploy verify-telegram --no-verify-jwt
 ```
 
 ### Auth bootstrap

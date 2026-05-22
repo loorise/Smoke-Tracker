@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { initTelegramWebApp } from '../../../infra/telegram/telegramWebAppService.js'
 import { getTelegramUserProfile } from '../../../infra/telegram/telegramAuthService.js'
 import { bootstrapCurrentUser } from '../services/authBootstrapService.js'
+import { authenticateTelegramSession } from '../services/telegramSessionService.js'
 
 const BOOTSTRAP_TIMEOUT_MS = 15_000
 
@@ -26,6 +27,7 @@ function withTimeout(promise, ms) {
 async function executeBootstrap() {
   initTelegramWebApp()
   const profile = getTelegramUserProfile()
+  await authenticateTelegramSession(profile)
   return bootstrapCurrentUser(profile)
 }
 
