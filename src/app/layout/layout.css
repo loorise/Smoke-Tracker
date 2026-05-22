@@ -1,0 +1,97 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  background: var(--color-bg);
+}
+
+.layout__header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  min-height: var(--header-height);
+  padding-top: var(--tg-content-safe-top);
+  padding-left: max(var(--space), var(--tg-content-safe-left));
+  padding-right: max(var(--space), var(--tg-content-safe-right));
+}
+
+.layout__brand {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.layout__main {
+  flex: 1;
+  padding: 0 var(--space) var(--space);
+  padding-left: max(var(--space), var(--tg-safe-left));
+  padding-right: max(var(--space), var(--tg-safe-right));
+  padding-bottom: calc(12px + var(--nav-height) + var(--tg-safe-bottom));
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  align-items: stretch;
+  min-height: var(--nav-height);
+  padding-bottom: var(--tg-safe-bottom);
+  padding-left: var(--tg-safe-left);
+  padding-right: var(--tg-safe-right);
+  background: var(--color-nav-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.bottom-nav__link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 6px 4px 4px;
+  color: var(--color-nav-inactive);
+  font-size: 0.5625rem;
+  font-weight: 500;
+  transition: color 0.12s ease;
+}
+
+.bottom-nav__link--active {
+  color: var(--color-nav-active);
+}
+
+.bottom-nav__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+}
+
+.bottom-nav__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.bottom-nav__icon path {
+  fill: currentColor;
+}
+
+.bottom-nav__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.bottom-nav__link--active .bottom-nav__dot {
+  background: var(--color-nav-active);
+}

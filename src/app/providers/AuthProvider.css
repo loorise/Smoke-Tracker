@@ -1,0 +1,15 @@
+.bootstrap-gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: var(--space);
+  padding-top: calc(var(--space) + var(--tg-content-safe-top));
+  padding-bottom: calc(var(--space) + var(--tg-safe-bottom));
+  background: var(--color-bg);
+}
+
+.bootstrap-gate .error {
+  width: 100%;
+  max-width: 360px;
+}

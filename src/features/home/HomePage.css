@@ -1,0 +1,118 @@
+.home--centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: calc(100dvh - var(--header-height) - var(--nav-height) - var(--home-action-height));
+  padding-bottom: calc(var(--home-action-height) + 8px);
+}
+
+.home__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 2px 2px 0;
+}
+
+.home__top-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.home__top-value {
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.home__hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 0 16px;
+  text-align: center;
+}
+
+.home__timer {
+  margin: 0;
+  font-family: var(--font-timer);
+  font-size: clamp(3rem, 15vw, 3.75rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.home__timer-sep {
+  color: var(--color-text-secondary);
+  opacity: 0.45;
+  padding: 0 0.06em;
+  font-weight: 400;
+}
+
+.home__saved {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1.35;
+}
+
+.home__saved-value {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.home__action-bar {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--nav-height) + var(--tg-safe-bottom));
+  transform: translateX(-50%);
+  z-index: 10;
+  width: 100%;
+  max-width: var(--max-width);
+  padding: 8px var(--space);
+  padding-left: max(var(--space), var(--tg-safe-left));
+  padding-right: max(var(--space), var(--tg-safe-right));
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.home__action-btn {
+  width: 100%;
+  min-height: 46px;
+  border: none;
+  border-radius: var(--radius);
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-accent-on);
+  background: var(--color-accent);
+  cursor: pointer;
+  transition: opacity 0.12s ease;
+}
+
+.home__action-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.home__action-btn:active:not(:disabled) {
+  opacity: 0.88;
+}

@@ -1,0 +1,173 @@
+.settings--centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.settings__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.settings__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.settings__avatar--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-accent-on);
+  background: var(--color-accent);
+}
+
+.settings__profile-text {
+  min-width: 0;
+}
+
+.settings__name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.settings__username {
+  margin: 2px 0 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.settings__username--empty {
+  font-style: italic;
+}
+
+.settings__section {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+.settings__section-title {
+  margin: 0 0 10px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.settings__section-title--danger {
+  color: #e74c3c;
+}
+
+.settings__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.settings__field:last-of-type {
+  margin-bottom: 0;
+}
+
+.settings__field-label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.settings__input {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+.settings__input:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--color-accent) 50%, var(--color-border));
+}
+
+.settings__input:disabled {
+  opacity: 0.55;
+}
+
+.settings__message {
+  margin: 8px 0 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.settings__message--error {
+  color: #e74c3c;
+}
+
+.settings__message--success {
+  color: var(--color-accent);
+}
+
+.settings__save-btn {
+  margin-top: 12px;
+}
+
+.settings__section--danger {
+  margin-top: 12px;
+}
+
+.settings__danger-text {
+  margin: 0 0 10px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.settings__danger-btn {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, #e74c3c 30%, var(--color-border));
+  border-radius: var(--radius-sm);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #e74c3c;
+  background: color-mix(in srgb, #e74c3c 6%, var(--color-card));
+  cursor: pointer;
+  transition: opacity 0.12s ease;
+}
+
+.settings__danger-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings__danger-btn:active:not(:disabled) {
+  opacity: 0.8;
+}
